@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { RouteOptions } from "../types";
+import { RouteOptions } from "../types/RouteOptions";
 
 export function RouteDocs(options: RouteOptions): MethodDecorator {
   return (target, propertyKey) => {

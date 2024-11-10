@@ -1,3 +1,3 @@
-export { ControllerDocs } from './decorators/Controller';
-export { RouteDocs } from './decorators/Route';
-export { generateSwaggerSpec } from './swagger';
+export { ControllerDocs } from "./decorators/ControllerDocs";
+export { RouteDocs } from "./decorators/RouteDocs";
+export { generateSwaggerDocs } from "./swagger";

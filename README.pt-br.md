@@ -1,40 +1,38 @@
 # Swagger Decorators
 
-_Read this in other languages: [English](README.md), [Português](README.pt-br.md)_
-
-A TypeScript decorator library for automatically generating Swagger documentation for APIs. It simplifies the creation of route definitions, parameters, and responses using decorators, enabling clearer and more maintainable documentation.
+Uma biblioteca de decoradores em TypeScript para gerar documentação Swagger de forma automática para APIs. Simplifica a criação de definições de rota, parâmetros, e respostas usando decoradores, permitindo uma documentação mais clara e fácil de manter.
 
 ## Sumário
 
-- [Installation](#instalation)
-- [Configurations](#configurations)
-- [Usage](#usage)
-  - [Defining Controllers and Routes](#defining-controllers-and-routes)
-  - [Specifying Parameters](#specifying-parameters)
-  - [Specifying Request Body](#specifying-request-body)
-  - [Defining Responses](#defining-responses)
-- [Full Example](#full-example)
-- [Contributing](#contributing)
-- [License](#license)
+- [Instalação](#instalação)
+- [Configurações](#configurações)
+- [Uso](#uso)
+  - [Definindo Controladores e Rotas](#definindo-controladores-e-rotas)
+  - [Especificando Parâmetros](#especificando-parâmetros)
+  - [Especificando Corpo de Requisição](#especificando-corpo-de-requisição)
+  - [Definindo Respostas](#definindo-respostas)
+- [Exemplo Completo](#exemplo-completo)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
 
-## Installation
+## Instalação
 
-First, install the library with the following command:
+Primeiro, instale a biblioteca com o seguinte comando:
 
 ```bash
 npm install swagger-decorators
 ```
 
-## Configurations
+## Configurações
 
-In your `tsconfig.json` file, enable these two settings, so that you can use the decorators.
+No seu arquivo `tsconfig.json` habilite essas duas configurações, para que seja possível o uso dos decorators.
 
 ```bash
  "experimentalDecorators": true,
  "emitDecoratorMetadata": true
 ```
 
-In your api's main file, like `index.ts`, for example, import the functions to generate swagger documentation.
+No arquivo principal da sua api `index.ts` por exemplo, importe as funções para gerar o swagger.
 
 ```bash
 import { generateSwaggerDocs } from "swagger-decorators";
@@ -53,9 +51,9 @@ const { swaggerUiServe, swaggerUiSetup } = generateSwaggerDocs(
 this.app.use("/docs", swaggerUiServe, swaggerUiSetup);
 ```
 
-## Usage
+## Uso
 
-## Defining Controllers and Routes
+## Definindo Controladores e Rotas
 
 ```bash
 import { ControllerDocs, RouteDocs } from 'swagger-decorators';
@@ -84,7 +82,7 @@ export class ExampleController {
 }
 ```
 
-## Specifying Parameters
+## Especificando Parâmetros
 
 ```bash
 const parameters = [
@@ -100,7 +98,7 @@ const parameters = [
 ];
 ```
 
-## Specifying Request Body
+## Especificando Corpo de Requisição
 
 ```bash
 const requestBody = {
@@ -120,12 +118,12 @@ const requestBody = {
 };
 ```
 
-## Defining Responses
+## Definindo Respostas
 
 ```bash
 const responses: Responses = {
   200: {
-    description: 'Success Response.',
+    description: 'Operação realizada com sucesso.',
     content: {
       'application/json': {
         schema: {
@@ -140,13 +138,13 @@ const responses: Responses = {
     },
   },
   default: {
-    description: 'Unexpected error',
+    description: 'Erro inesperado',
   },
 };
 
 ```
 
-## Full Example
+## Exemplo completo
 
 ```bash
 import { ControllerDocs, RouteDocs } from 'swagger-decorators';
@@ -156,7 +154,7 @@ export class ClientController {
   @RouteDocs({
     path: '/edit',
     method: 'put',
-    summary: 'Edit client information',
+    summary: 'Edita as informações de um cliente',
     tags: ['Client'],
     parameters: [
       {
@@ -188,15 +186,15 @@ export class ClientController {
     },
     responses: {
       200: {
-        description: 'Information edited successfully.',
+        description: 'Informações do cliente editadas com sucesso.',
       },
       default: {
-        description: 'Error while editing client information',
+        description: 'Erro ao editar as informações do cliente.',
       },
     },
   })
   editClient() {
-    return { message: 'Updated!' };
+    return { message: 'Cliente atualizado!' };
   }
 }
 
@@ -204,10 +202,10 @@ export class ClientController {
 
 ## Contribuindo
 
-Feel free to open issues or pull requests for improvements and fixes. Feedback and suggestions are welcome.
+Sinta-se à vontade para abrir issues ou pull requests para melhorias e correções. Feedback e sugestões são bem-vindos
 
 ## Licença
 
 ---
 
-This file provides detailed documentation for installation, usage, and main features of the library, with practical examples to help other developers easily use your library.
+Este arquivo fornece uma documentação detalhada da instalação, uso e principais recursos da biblioteca, com exemplos práticos para que outros desenvolvedores possam usar sua biblioteca facilmente.

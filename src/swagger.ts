@@ -1,5 +1,7 @@
 import * as swaggerJsdoc from "swagger-jsdoc";
-import { RouteOptions, SwaggerDefinition } from "./types";
+import { SwaggerDefinition } from "./types/SwaggerDefinition";
+import { RouteOptions } from "./types/RouteOptions";
+import * as swaggerUi from "swagger-ui-express";
 
 export function generateSwaggerSpec(
   controllers: any[],
@@ -34,4 +36,14 @@ export function generateSwaggerSpec(
     swaggerDefinition: { ...options, paths },
     apis: [],
   });
+}
+
+export function generateSwaggerDocs(
+  controllers: any[],
+  options: SwaggerDefinition
+) {
+  return {
+    swaggerUiServe: swaggerUi.serve,
+    swaggerUiSetup: swaggerUi.setup(generateSwaggerSpec(controllers, options)),
+  };
 }
