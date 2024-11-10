@@ -202,11 +202,11 @@ export class ClientController {
 
 ```
 
-## Contribuindo
+## Contributing
 
 Feel free to open issues or pull requests for improvements and fixes. Feedback and suggestions are welcome.
 
-## Licença
+## License
 
 ---
 
