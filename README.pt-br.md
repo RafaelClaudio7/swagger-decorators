@@ -20,7 +20,7 @@ Uma biblioteca de decoradores em TypeScript para gerar documentação Swagger de
 Primeiro, instale a biblioteca com o seguinte comando:
 
 ```bash
-npm install swagger-decorators
+npm install swagger-decorators-express
 ```
 
 ## Configurações

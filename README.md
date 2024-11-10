@@ -22,7 +22,7 @@ A TypeScript decorator library for automatically generating Swagger documentatio
 First, install the library with the following command:
 
 ```bash
-npm install swagger-decorators
+npm install swagger-decorators-express
 ```
 
 ## Configurations

@@ -1,11 +1,15 @@
 {
   "name": "swagger-decorators-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "publish-package": "rm -rf dist && tsc && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RafaelClaudio7/swagger-decorators"
   },
   "keywords": ["swagger", "express", "typescript", "decorators", "api"],
   "author": "Rafael Claudio",
