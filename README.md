@@ -4,7 +4,7 @@ _Read this in other languages: [English](README.md), [Português](README.pt-br.m
 
 A TypeScript decorator library for automatically generating Swagger documentation for APIs. It simplifies the creation of route definitions, parameters, and responses using decorators, enabling clearer and more maintainable documentation.
 
-## Sumário
+## Summary
 
 - [Installation](#instalation)
 - [Configurations](#configurations)
@@ -37,7 +37,7 @@ In your `tsconfig.json` file, enable these two settings, so that you can use the
 In your api's main file, like `index.ts`, for example, import the functions to generate swagger documentation.
 
 ```bash
-import { generateSwaggerDocs } from "swagger-decorators";
+import { generateSwaggerDocs } from "swagger-decorators-express";
 
 const { swaggerUiServe, swaggerUiSetup } = generateSwaggerDocs(
       [new ExampleController()],
@@ -58,7 +58,7 @@ this.app.use("/docs", swaggerUiServe, swaggerUiSetup);
 ## Defining Controllers and Routes
 
 ```bash
-import { ControllerDocs, RouteDocs } from 'swagger-decorators';
+import { ControllerDocs, RouteDocs } from 'swagger-decorators-express';
 
 @ControllerDocs('/example')
 export class ExampleController {
@@ -149,7 +149,7 @@ const responses: Responses = {
 ## Full Example
 
 ```bash
-import { ControllerDocs, RouteDocs } from 'swagger-decorators';
+import { ControllerDocs, RouteDocs } from 'swagger-decorators-express';
 
 @ControllerDocs('/client')
 export class ClientController {

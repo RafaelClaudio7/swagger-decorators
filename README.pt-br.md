@@ -35,7 +35,7 @@ No seu arquivo `tsconfig.json` habilite essas duas configurações, para que sej
 No arquivo principal da sua api `index.ts` por exemplo, importe as funções para gerar o swagger.
 
 ```bash
-import { generateSwaggerDocs } from "swagger-decorators";
+import { generateSwaggerDocs } from "swagger-decorators-express";
 
 const { swaggerUiServe, swaggerUiSetup } = generateSwaggerDocs(
       [new ExampleController()],
@@ -56,7 +56,7 @@ this.app.use("/docs", swaggerUiServe, swaggerUiSetup);
 ## Definindo Controladores e Rotas
 
 ```bash
-import { ControllerDocs, RouteDocs } from 'swagger-decorators';
+import { ControllerDocs, RouteDocs } from 'swagger-decorators-express';
 
 @ControllerDocs('/example')
 export class ExampleController {
@@ -147,7 +147,7 @@ const responses: Responses = {
 ## Exemplo completo
 
 ```bash
-import { ControllerDocs, RouteDocs } from 'swagger-decorators';
+import { ControllerDocs, RouteDocs } from 'swagger-decorators-express';
 
 @ControllerDocs('/client')
 export class ClientController {
